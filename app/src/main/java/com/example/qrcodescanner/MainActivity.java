@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnScan.setOnClickListener(v -> startQRCodeScanner());
 
-
-
     }
 
 
@@ -62,29 +60,24 @@ public class MainActivity extends AppCompatActivity {
                 if (result.getContents() != null) {
                     String scannedData = result.getContents();
                     txtResult.setText("Scanned: " + scannedData);
-
-                    // Perform actions based on scanned content
                     handleScannedData(scannedData);
                 }
             }
     );
+
     private void handleScannedData(String data) {
         if (data.startsWith("http://") || data.startsWith("https://")) {
-            // Open in browser
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
             startActivity(browserIntent);
         } else if (data.startsWith("mailto:")) {
-            // Open email app
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
             emailIntent.setData(Uri.parse(data));
             startActivity(emailIntent);
         } else if (data.startsWith("tel:")) {
-            // Open dialer
             Intent dialIntent = new Intent(Intent.ACTION_DIAL);
             dialIntent.setData(Uri.parse(data));
             startActivity(dialIntent);
         } else {
-            // Display the scanned text
             Toast.makeText(this, "Scanned: " + data, Toast.LENGTH_LONG).show();
         }
 
