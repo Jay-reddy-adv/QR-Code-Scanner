@@ -1,6 +1,6 @@
 A QR Code Scanner Android application built using Java and ZXing BarcodeScannerView. The app allows users to scan QR codes and barcodes with smart actions such as opening links, dialing phone numbers, and composing emails.
 
-🚀 Features
+🚀 Features :
 
 ✅ Scan QR Codes & Barcodes effortlessly
 
@@ -11,7 +11,6 @@ A QR Code Scanner Android application built using Java and ZXing BarcodeScannerV
 ✅ Auto-detect email addresses and open the email app
 
 ✅ Beep sound on successful scan
-
 
 
 
